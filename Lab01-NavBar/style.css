@@ -61,9 +61,10 @@
         gap: 3rem;
     }
     
-    .img profile img {
-        width: 400px;
-        height: 400px;
+    .img-profile img {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
     }
     
     .text-display {
