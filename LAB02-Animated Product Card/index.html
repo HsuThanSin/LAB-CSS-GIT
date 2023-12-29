@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Nike Animated Product Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="product-card">
+      <div class="logo-cart">
+        <img src="nike-logo.png" alt="logo" />
+        <i class="bx bx-shopping-bag"></i>
+      </div>
+      <div class="main-images">
+        <img class="pink active" src="RTFKT-pink.png" alt="pink" />
+        <img class="purple" src="RTFKT-purple.png" alt="pink" />
+        <img class="gray" src="RTFKT-gray.png" alt="pink" />
+      </div>
+      <div class="shoe-details">
+        <span class="shoe_name">NIKE RTFKT CryptoKicks</span>
+
+        <p>
+          RTFKT first exploded after the brand launched its first non-fungible
+          token (NFT) sneaker collection back
+        </p>
+        <div class="stars">
+          <i class="bx bx-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+        </div>
+      </div>
+      <br />
+      <div class="color-price">
+        <div class="color-option">
+          <span class="color">Color:</span>
+          <div class="circles">
+            <span class="circle pink active"></span>
+            <span class="circle purple"></span>
+            <span class="circle gray"></span>
+          </div>
+        </div>
+        <div class="price">
+          <span class="price_num">$134,000.00</span> <br />
+          <span class="price_letter"
+            >One hundred thirty-four thousand dollars</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let circle = document.querySelector(".color-option");
+
+      circle.addEventListener("click", (e) => {
+        if (e.target?.classList.value.includes("circle")) {
+          circle.querySelector(".active").classList.remove("active");
+          e.target?.classList.add("active");
+          let image = document.querySelector(".main-images");
+          image.querySelector(".active")?.classList.remove("active");
+          image
+            .querySelector(`.${e.target?.classList[1]}`)
+            ?.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>
